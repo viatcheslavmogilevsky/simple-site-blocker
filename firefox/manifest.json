@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Site Blocker",
+  "version": "1.0",
+  "description": "Blocks access to configured websites",
+  "permissions": [
+    "storage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Site Blocker"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "web_accessible_resources": [
+    "blocked.html"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "simplesiteblocker@example.org",
+      "strict_min_version": "1.0"
+    }
+  }
+}
