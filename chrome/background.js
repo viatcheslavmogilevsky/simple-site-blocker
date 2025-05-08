@@ -1,4 +1,4 @@
-chrome.webNavigation.onBeforeNavigate.addListener(function(details) {
+function checkAndBlockSite(details) {
   if(details.frameId == 0) {
     chrome.storage.sync.get(['blockedSites'], function(result) {
       const blockedSites = result.blockedSites || [];
@@ -16,4 +16,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(function(details) {
       }
     });
   }
-});
+}
+
+chrome.webNavigation.onBeforeNavigate.addListener(checkAndBlockSite);
+chrome.webNavigation.onCompleted.addListener(checkAndBlockSite);
