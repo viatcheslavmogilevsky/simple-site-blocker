@@ -23,6 +23,18 @@ It's simple, yet effective way to protect from distraction websites (social medi
 5. Select any file in `firefox` sub-directory of the repo (typically manifest.json)
 
 
+### Firefox Developer Edition
+
+Regular Firefox does not keep temporary add-ons, which is kind of annoying while using locally built add-ons.
+
+The Developer Edition can keep such add-ons, if `xpinstall.signatures.required` is disabled
+
+1. Disable `xpinstall.signatures.required`: visit `about:config`, type `xpinstall.signatures.required` and disable.
+2. Clone the repo
+3. Compress all files within `firefox/` directory (but not directory itself), except `*.zip` files
+4. Install add-on: visit `about:addons`, click on "gear" button (⚙️), then on _Install Add-on From File..._ and choose the zip archive from step 3. 
+
+
 ## Usage
 
 1. Click the extension icon in the toolbar
